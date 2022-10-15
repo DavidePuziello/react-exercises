@@ -6,12 +6,12 @@ export class Welcome extends React.Component {
     render() {
         return <>
             <p>Welcome, {this.props.name}</p>
-            <Age age={65}/>
+            {this.props.age > 18 && this.props.age < 65 && <Age age={this.props.age}/>}
         </>
     }
 }
 
 Welcome.defaultProps = {
     name: <strong>Davide</strong>,
-    age: "26"
+    age: 64
 }
