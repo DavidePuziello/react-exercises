@@ -12,6 +12,6 @@ export class Welcome extends React.Component {
 }
 
 Welcome.defaultProps = {
-    name: "John",
+    name: "Davide",
     age: 19
 }
