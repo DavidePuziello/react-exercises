@@ -38,7 +38,7 @@ export class Login extends React.Component {
 
     render() {
         const LoginStyle = {
-            backgroundColor: this.state.password.length > 8 ? "red" : "green"
+            backgroundColor: this.state.password.length > 8 ? "green" : "red"
         }
 
         return <>
