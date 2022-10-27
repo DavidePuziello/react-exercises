@@ -10,7 +10,6 @@ export class TodoList extends React.Component {
         ]
     }
 
-
     handleInputChange = (event) => {
         const value = event.target.value
 
