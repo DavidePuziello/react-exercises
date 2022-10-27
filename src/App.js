@@ -6,7 +6,7 @@ import { Login } from "./Login";
 export class App extends React.Component {
     render() {
         return (
-        <Container>
+        <Container title="This is my title">
             <Hello />
             <Login />
         </Container>
