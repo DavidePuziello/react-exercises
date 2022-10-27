@@ -40,9 +40,21 @@ export class TodoList extends React.Component {
         })
     }
 
+    handleRemoveItem = (event) => {
+        let newItems = [...this.state.items]
+        newItems.splice(event, 1)
+        this.setState({
+            items: newItems
+        })
+    }
+
 
     render() {
-        const items = this.state.items.map(name => <li>{name}</li>)
+        const items = this.state.items.map((name, index) =>
+            <li key={index}>
+                {name}
+                <button key={index} onClick={this.handleRemoveItem}>Remove Item</button>
+            </li>)
 
         return <>
             <label>
@@ -51,7 +63,7 @@ export class TodoList extends React.Component {
             </label>
             <button onClick={this.handleFormSubmit} disabled={this.state.newrole !== "Support"}>Add the missed role</button>
             <button onClick={this.handleResetChange}>Reset</button>
-            
+
             <ul>{items}</ul>
         </>
     }
