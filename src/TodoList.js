@@ -10,7 +10,6 @@ export class TodoList extends React.Component {
         ]
     }
 
-
     handleInputChange = (event) => {
         const value = event.target.value
 
@@ -50,11 +49,11 @@ export class TodoList extends React.Component {
 
 
     render() {
-        const items = this.state.items.map((name, index) =>
+        /* const items = this.state.items.map((name, index) =>
             <li key={index}>
                 {name}
                 <button key={index} onClick={this.handleRemoveItem}>Remove Item</button>
-            </li>)
+            </li>) */
 
         return <>
             <label>
@@ -64,7 +63,9 @@ export class TodoList extends React.Component {
             <button onClick={this.handleFormSubmit} disabled={this.state.newrole !== "Support"}>Add the missed role</button>
             <button onClick={this.handleResetChange}>Reset</button>
 
-            <ul>{items}</ul>
+            <ul>
+                {this.props.render(this.state.items, this.handleRemoveItem)}
+            </ul>
         </>
     }
 }
