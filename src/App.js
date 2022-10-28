@@ -1,20 +1,20 @@
 import React from "react";
 import { Container } from "./Container";
 import { Hello } from "./Hello";
+import { LanguageContext } from "./LanguageContext";
 import { TodoList } from "./TodoList";
 
 export class App extends React.Component {
     render() {
-        return (
+        return <div>
+            <LanguageContext />
             <Container title="This is my title">
                 <Hello />
                 <TodoList render={(items, handleRemoveItem) => {
-                    const itemsArr = items
-                    const remove = handleRemoveItem
-                    const itemsViewer = itemsArr.map((name, index) =>
+                    const itemsViewer = items.map((name, index) =>
                         <li key={index}>
                             {name}
-                            <button key={index} onClick={remove}>Remove Item</button>
+                            <button key={index} onClick={handleRemoveItem}>Remove Item</button>
                         </li>)
 
                     return (
@@ -23,6 +23,6 @@ export class App extends React.Component {
                         </li>)
                 }} />
             </Container>
-        )
+        </div>
     }
 }
