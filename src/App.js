@@ -10,7 +10,7 @@ export class App extends React.Component {
             <LanguageContext />
             <Container title="This is my title">
                 <Welcome />
-                <Sum number={[1, 2, 3, 4, 5]}/>
+                <Sum />
             </Container>
         </div>
     }
