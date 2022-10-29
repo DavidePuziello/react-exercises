@@ -1,7 +1,7 @@
 import React from "react";
+import { ClickCounter } from "./ClickCounter";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-import { Sum } from "./Sum";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -10,7 +10,7 @@ export class App extends React.Component {
             <LanguageContext />
             <Container title="This is my title">
                 <Welcome />
-                <Sum />
+                <ClickCounter />
             </Container>
         </div>
     }
