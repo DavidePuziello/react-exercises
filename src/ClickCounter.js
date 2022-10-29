@@ -1,26 +1,4 @@
-import { useEffect, useState } from "react"
-
-
-export function ClickCounter(props, { initialValue = 0}) {
-
-    const [count, setCount] = useState(initialValue)
-
-    useEffect(() => {
-        props.onCounterChange(count)
-    }, [count, props])
-
-    function handleCounterClick() {
-        setCount(currentCount => currentCount + 1)
-    }
-
-    return <>
-        <h1>You clicked {count} times</h1>
-        <button onClick={handleCounterClick}>Click me!!</button>
-    </>
-}
-
-/* import React from "react";
-
+import React from "react";
 
 export class ClickCounter extends React.Component {
     state = {
@@ -41,4 +19,4 @@ export class ClickCounter extends React.Component {
             <button onClick={this.handleCounterClick}>Click me!!</button>
         </>
     }
-} */
+}
