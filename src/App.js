@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-import { TodoList } from "./TodoList";
+import { Sum } from "./Sum";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -10,18 +10,7 @@ export class App extends React.Component {
             <LanguageContext />
             <Container title="This is my title">
                 <Welcome />
-                <TodoList render={(items, handleRemoveItem) => {
-                    const itemsViewer = items.map((name, index) =>
-                        <li key={index}>
-                            {name}
-                            <button key={index} onClick={handleRemoveItem}>Remove Item</button>
-                        </li>)
-
-                    return (
-                        <li>
-                            {itemsViewer}
-                        </li>)
-                }} />
+                <Sum number={[1, 2, 3, 4, 5]}/>
             </Container>
         </div>
     }
