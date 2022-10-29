@@ -1,4 +1,51 @@
-import React from "react";
+import { useState } from "react"
+
+export function Login() {
+    const [data, setData] = useState({
+        username: "",
+        password: "",
+        remember: false
+    })
+
+    function handleInputChange(event) {
+        const { name, type, value, checked } = event.target
+
+        setData(data => {
+            return {
+                ...data,
+                [name]: type === 'checkbox' ? checked : value
+            }
+        })
+    }
+
+    function handleResetChange() {
+        setData({
+            username: "",
+            password: "",
+            remember: false
+        })
+    }
+    
+    function onLogin() {
+        console.log(data)
+    }
+
+    return <>
+        <h1>Login</h1>
+        <input name="username" value={data.username} onChange={handleInputChange} />
+        <input name="password" type="password" value={data.password} onChange={handleInputChange} />
+        <input name="remember" type="checkbox" checked={data.remember} onChange={handleInputChange} />
+        <button onClick={onLogin}>Login</button>
+        <button onClick={handleResetChange}>Reset</button>
+    </>
+}
+
+
+
+
+
+
+/* import React from "react";
 
 export class Login extends React.Component {
     state = {
@@ -50,4 +97,4 @@ export class Login extends React.Component {
             <button onClick={this.handleResetChange}>Reset</button>
         </>
     }
-}
+} */
