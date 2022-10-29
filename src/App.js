@@ -1,7 +1,7 @@
 import React from "react";
 import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
-import { Login } from "./Login";
+import { ClickCounter } from "./ClickCounter";
 import { Welcome } from "./Welcome";
 
 export class App extends React.Component {
@@ -10,7 +10,9 @@ export class App extends React.Component {
             <LanguageContext />
             <Container title="This is my title">
                 <Welcome />
-                <Login />
+                <ClickCounter onCounterChange= {(count) => {
+                    return console.log("The counter is now " + count)
+                }}/>
             </Container>
         </div>
     }
