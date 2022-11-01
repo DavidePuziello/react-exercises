@@ -1,3 +1,4 @@
+import { useContext } from "react"
 import { CreateContext } from "./LanguageContext"
 
 const Strings = {
@@ -10,13 +11,6 @@ const Strings = {
 }
 
 export function DisplayLanguage(){
-    return (
-        <CreateContext.Consumer>
-            {language =>{
-                return (
-                    <h1>{Strings[language].HELLO}</h1>
-                )
-            }}
-        </CreateContext.Consumer>
-    )
+    const language = useContext(CreateContext)
+    return <h1>{Strings[language].HELLO}</h1>
 }
