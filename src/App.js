@@ -3,7 +3,7 @@ import { Container } from "./Container";
 import { LanguageContext } from "./LanguageContext";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
-import { HookCounter } from "./HookCounter";
+import { FilteredList } from "./FilteredList";
 
 export function App() {
     const [showCounter, setShowCounter] = useState(true)
@@ -18,7 +18,7 @@ export function App() {
             <Welcome />
             <button onClick={handleToggleCounter}>Toggle Counter</button>
             {showCounter && <Counter />}
-            <HookCounter />
+            <FilteredList />
         </Container>
     </div>
 }
