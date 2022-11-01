@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GithubUser } from "./GithubUser";
+import { Link, Outlet } from "react-router-dom";
 
 export function GithubUserList() {
 
@@ -19,15 +19,18 @@ export function GithubUserList() {
         console.log(list)
     }, [list])
 
-    return <>
+    return <div style={{marginTop: 24}}>
         <label>
             Add a Github user:
             <input name='input' value={input} onChange={handleInputChange} />
         </label>
         <button onClick={handleButtonClick}>Search</button>
         <div>
-            {list.map((name,index) => <GithubUser key={index} username={name} />
+            {list.map((name,index) => <>
+            <Link to={name} key={index} name={name}>{name}</Link>
+            <Outlet />
+            </>
             )}
         </div>
-    </>
+    </div>
 }
