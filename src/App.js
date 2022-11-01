@@ -1,22 +1,11 @@
-import React, { useState } from "react";
-import { Container } from "./Container";
-import { LanguageContext } from "./LanguageContext";
-import { Welcome } from "./Welcome";
-import { Counter } from "./Counter";
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Welcome } from "./Welcome"
 
 export function App() {
-    const [showCounter, setShowCounter] = useState(true)
-
-    function handleToggleCounter() {
-        setShowCounter(s => !s)
-    }
-
     return <div>
-        <LanguageContext />
-        <Container title="This is my title">
-            <Welcome />
-            <button onClick={handleToggleCounter}>Toggle Counter</button>
-            {showCounter && <Counter />}
-        </Container>
+        <Routes>
+            <Route path="/" element={<Welcome />} />
+        </Routes>
     </div>
 }
